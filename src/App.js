@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import BrowsePage from './components/pages/Browse.js'
-import ComparePage from './components/pages/Compare.js'
-import DetailPage from './components/pages/Detail.js'
+import BrowsePage from './components/pages/BrowsePage.js'
+import ComparePage from './components/pages/ComparePage'
+import DetailPage from './components/pages/detail/DetailPage'
 import Home from './components/pages/Home.js'
 class App extends Component {
 	render() {
