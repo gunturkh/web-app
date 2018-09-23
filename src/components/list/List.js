@@ -25,19 +25,30 @@ class ConnectedList extends Component{
 			checked: {}
 		}
 
+		this.handleSubmit=this.handleSubmit.bind(this)
 		this.handleClick=this.handleClick.bind(this)
 		this.onSelectedChange=this.onSelectedChange.bind(this)
 	}
 
-	onSelectedChange (item,index ) {
+	handleSubmit(data,id,item){
 		
-		this.setState(previousState => ({
+		this.props.getCheckboxState(data,id,item)
+	}
+
+	onSelectedChange (item,index ) {
+
+		// if(this.state.checked[index]===true) console.log(`Checkbox ${index}: ${this.state.checked[index]}`)
+		
+		
+		this.setState({
 			checked: {
-				...previousState.checked,
-				[index]: !previousState.checked[index]
+				...this.state.checked,
+				[index]: !this.state.checked[index]
 			}
-		}))
-		console.log('Item: ', item)
+		})
+		console.log(`Checkbox ID (${index}) : ${!this.state.checked[index]}`)
+
+		this.handleSubmit(!this.state.checked[index],index,item)
 		
 	}
 
