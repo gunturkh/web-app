@@ -1,0 +1,60 @@
+.list-group{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    /* background-color: rgba(0, 105, 61, 0.527); */
+    transition: 0.3s;
+    width: 200px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.card .checked{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: rgba(0, 105, 61, 0.527);
+    transition: 0.3s;
+    width: 200px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.card:hover > .compare{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    display: block;
+}
+
+.compare{
+    justify-content: center;
+    /* width: auto;
+    height: 20px;
+    /* color: white;
+    font-size: 1em;
+    background-color: rgb(0, 105, 61); */ 
+    display: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    padding: 2px 16px;
+}
+
+.view-detail {
+    position: relative;
+    background-color:rgb(0, 105, 61); /* Green */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-top: 10px;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
