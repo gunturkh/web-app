@@ -4,7 +4,9 @@ class ButtonCompare extends Component{
 
 	render(){
 		return(
-			<button className="button-compare">Compare</button>
+			<div className="sticky">
+				<button className="button-compare">Compare</button>
+			</div>
 		)
 	}
 }
