@@ -3,17 +3,23 @@ import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 
 class Navbar extends Component{
+	// constructor(props){
+	// 	super(props)
+	// }
 
 	render(){
 		return (
-			<div className="navbar">
-				<div className="navbar-brand">
-					<NavLink className="navbar-brand" to="/">Web App</NavLink>
-				</div>
-				<div className="navbar-link">
-					<NavLink className="navbar-link" to="/browse">Browse</NavLink>
-				</div>
-			</div>
+			<nav className="flexContainer Background">
+				<ul className="nav flexItem flexStart">
+					<NavLink to="/">Web App</NavLink>
+				</ul>
+				<ul className="nav flexContainer flexEnd">
+					<NavLink to="/">Home</NavLink>
+					<NavLink to="/browse">Browse</NavLink>
+					<NavLink to="/compare" className={this.props.compare} onClick={()=>{console.log(this.props.compareOnClick)}}>Compare</NavLink>
+					
+				</ul>
+			</nav>
 		)
 	}
 }

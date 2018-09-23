@@ -1,23 +1,31 @@
-.navbar{
+.flexContainer {
     display: flex;
-    flex-direction: row;
+    position: sticky;
+    top: 0;
+}
+.flexItem {
+    flex: 1;
+}
+.flexStart {
     justify-content: flex-start;
-    align-items: center;
-    width: auto;
-    height: 100px;
-    background-color: rgb(0, 105, 61);
+}
+.flexEnd {
+    justify-content: flex-end;
+}
+.Background {
+    background: rgb(0, 105, 61);
+}
+.nav {
+    list-style: none;
+}
+.nav a {
+    text-decoration: none;
+    display: block;
+    padding: 0 1em;
+    color: white;
 }
 
-.navbar-brand{
-    color: white;
-    margin-left: 20px;
-    font-size: 1.5em;
-    text-decoration: none;
+.nav .hidden{
+    display: none;
 }
 
-.navbar-link{
-    color: white;
-    margin-left: 20px;
-    font-size: 1em;
-    text-decoration: none;
-}
