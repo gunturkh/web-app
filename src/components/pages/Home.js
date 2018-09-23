@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import Navbar from '../navbar/Navbar.js'
+import { Link } from 'react-router-dom'
 
 class Home extends Component {
 	render(){
 		return (
 			<div>
+				<Navbar/>
 				<h1>Home</h1>
 				<li>
 					<Link to="/">Home</Link>
