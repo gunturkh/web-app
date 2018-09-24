@@ -25,8 +25,9 @@ class Card extends Component{
 	}
 
 	render(){
-		let checked = 'card ' + (this.state.compare ? 'checked' : '')
-        
+		let checked = 'card cardContainer ' + (this.state.compare ? 'checked' : '')
+		console.log('compare: ', this.state.compare)
+		
 		return(
 			<div className={checked}>
 				<div className="compare">
@@ -39,19 +40,22 @@ class Card extends Component{
 						onChange={this.handleInputChange}
 						disabled={this.props.disabled}
 					></input>
+					<span>Compare</span>
 				</div>
 
 				<div className="container">
 					<ProviderLogo logo={this.props.insuranceProviderId}/>
-					{this.props.insuranceProviderId}
-					<div>
-				Name: {this.props.name}
-					</div>
-					<div>
-				Sum: {this.props.sum}
-					</div>
-					<div>
-				Premium: {this.props.premium}
+					{/* {this.props.insuranceProviderName} */}
+					<div className="cardInfo">
+						<div>
+							<b>{this.props.name}</b>
+						</div>
+						<div>
+							<b>Sum:</b> {this.props.sum} SGD
+						</div>
+						<div>
+							<b>Premium:</b> {this.props.premium} SGD
+						</div>
 					</div>
 					<div>
 						<Link to={'/detail'}>	<button onClick={() => this.props.onClick(this.props.item,this.props.id)} className="view-detail">View Detail</button> </Link>
