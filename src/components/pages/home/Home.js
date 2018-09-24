@@ -7,7 +7,7 @@ class Home extends Component {
 		return (
 			
 			<div className="flexContainer flexColumn fullHeight whiteBackground">
-				<Navbar/>
+				<Navbar compare="nav hidden"/>
 				<div className="flexContainer flexItem">
 					<main className="flexItem whiteBackground main">
 						<p>Put Content Here</p>
@@ -17,10 +17,6 @@ class Home extends Component {
 						<h2>Filter</h2>
 						<p>Put your content here</p>
 					</aside>
-					{/* <aside className="sidebar sidebarRight">
-						<h2>Right Sidebar</h2>
-						<p>Put your content here</p>
-					</aside> */}
 				</div>
 				<footer className="flexContainer flexCenter blueBackground whiteText height50">&copy; Jennifer Bland</footer>
 			</div>
