@@ -1,6 +1,8 @@
 .flexContainer {
     display: flex;
     position: sticky;
+    flex-direction: row;
+    align-items: center;
     top: 0;
 }
 .flexItem {
@@ -17,6 +19,8 @@
 }
 .nav {
     list-style: none;
+    z-index: 5;
+    align-items: center;
 }
 .nav a {
     text-decoration: none;
@@ -24,8 +28,13 @@
     padding: 0 1em;
     color: white;
 }
-
 .nav .hidden{
     display: none;
 }
-
+.front{
+    z-index: 5;
+}
+.navBrand{
+    font-size: 30px;
+    margin-left: 10px;
+}
