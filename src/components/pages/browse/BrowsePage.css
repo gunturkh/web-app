@@ -1,0 +1,73 @@
+.browseContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.listContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.listWrapper{
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-around;
+    order: 2;
+    background-color: white;
+    color: black;
+    overflow: auto;
+}
+.flexContainer {
+    display: flex;
+}
+.flexItem {
+    flex: 1;
+}
+.flexGrow {
+    flex-grow: inherit;
+}
+.flexColumn {
+    flex-direction: column;
+}
+.fullHeight {
+    height: 100vh;
+}
+.filter{
+    margin: 0;
+}
+.sorter{
+    margin-bottom: 0;
+}
+.whiteBackground {
+    background: white;
+}
+.blueBackground {
+    background: rgb(0, 105, 61);
+}
+.main{
+    order: 2;
+    padding: 20px;
+}
+.sidebarFilter {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    color: white;
+    background: rgb(0, 105, 61);
+    border-top: solid white;
+    padding: 20px;
+    order: 1;
+    align-items: center;
+}
+
+.selectFilter {
+    display: flex;
+    width: 100%;
+    height: auto;
+    border: none;
+    background: white;
+    border-radius: 5px;
+}
+.container--main{
+    flex:1 0 auto;
+}
