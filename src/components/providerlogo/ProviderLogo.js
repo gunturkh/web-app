@@ -32,7 +32,7 @@ class ProviderLogo extends Component {
 	insuranceName(name){
 		if(name==='HDFC_ERGO')
 		{
-			return 'HDFCErgo'
+			return 'HDFC Ergo General Insurance'
 		}
 		else if (name==='RELIGARE_HEALTH')
 		{
@@ -48,12 +48,12 @@ class ProviderLogo extends Component {
 		const insuranceName = this.insuranceName(this.props.logo)
 		let logo = this.logoPicker(this.props.logo)
 		return(
-			<div>
-				<div>
+			<div className="providerLogoContainer">
+				<div className="logoContainer">
 					<img src={logo} alt="Logo" className="logo"></img>
 				</div>
 				<div className="name">
-					{insuranceName}
+					<b>{insuranceName}</b>
 				</div>
 			</div>
 		)
