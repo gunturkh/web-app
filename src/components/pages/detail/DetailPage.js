@@ -50,15 +50,26 @@ class Detail extends Component {
 
 	render(){
 		console.log('Detail : ', this.props.detail)
-		const insuranceName = this.insuranceName(this.props.detail.insuranceProviderId)
+		const detail = this.props.detail
+		const MedicalFeatures = detail.MedicalFeatures
+		const TravelFeatures = detail.TravelFeatures
+		const insuranceName = this.insuranceName(detail.insuranceProviderId)
+		const sumInsureds = detail.sumInsureds
+		const planName = detail.planName
+		const premium = detail.Premium
 		const logo = this.logoPicker(this.props.detail.insuranceProviderId)
 		
 		return (
-			<div>
-				<Navbar/>
-				<div className="detail">
+			<div className="flexContainer flexColumn fullHeight">
+				<Navbar compare="nav hidden"/>
+				<div className="flexContainer flexRow flexSpaceAround">
 					<img src={logo} alt="insurance-logo" className="insurance-logo"></img>
 					<div>{insuranceName}</div>
+					<div>{premium}</div>
+					<div>{planName}</div>
+					<div>Sum Insureds: {sumInsureds}</div>
+					<div>{MedicalFeatures.map((item,id)=>(<div key={id}>{item.benefitName}</div>))}</div>
+					<div>{TravelFeatures.map((item,id)=>(<div key={id}>{item.benefitName}</div>))}</div>
 				</div>
 			</div>
 		)
