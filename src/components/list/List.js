@@ -28,6 +28,7 @@ class ConnectedList extends Component{
 		this.handleSubmit=this.handleSubmit.bind(this)
 		this.handleClick=this.handleClick.bind(this)
 		this.onSelectedChange=this.onSelectedChange.bind(this)
+		this.compare=this.compare.bind(this)
 	}
 
 	handleSubmit(data,id,item){
@@ -35,18 +36,14 @@ class ConnectedList extends Component{
 		this.props.getCheckboxState(data,id,item)
 	}
 
-	onSelectedChange (item,index ) {
+	onSelectedChange (item,index) {
 
-		// if(this.state.checked[index]===true) console.log(`Checkbox ${index}: ${this.state.checked[index]}`)
-		
-		
 		this.setState({
 			checked: {
 				...this.state.checked,
 				[index]: !this.state.checked[index]
 			}
 		})
-		console.log(`Checkbox ID (${index}) : ${!this.state.checked[index]}`)
 
 		this.handleSubmit(!this.state.checked[index],index,item)
 		
@@ -59,24 +56,64 @@ class ConnectedList extends Component{
 			sumInsureds: item.plan.sumInsureds,
 			amount: item.totalAmount.amount,
 			MedicalFeatures: item.plan.planBenefitCategories.MedicalFeatures,
-			TravelFeatures:  item.plan.planBenefitCategories.TravelFeatures
+			TravelFeatures:  item.plan.planBenefitCategories.TravelFeatures,
+			Premium: item.totalAmount.amount
 		})
 	}
+
+	compare(a,b) {
+		if(this.props.sort === 'highestToLowest') {
+			if (a.totalAmount.amount > b.totalAmount.amount)
+				return -1
+			if (a.totalAmount.amount < b.totalAmount.amount)
+				return 1
+			return 0
+		}
+		else if (this.props.sort === 'lowestToHighest') {
+			if (a.totalAmount.amount < b.totalAmount.amount)
+				return -1
+			if (a.totalAmount.amount > b.totalAmount.amount)
+				return 1
+			return 0
+		}
+	}
+	
 
 	render(){
 		
 		const checked = this.state.checked
 		const checkedCount = Object.keys(checked).filter(key => checked[key]).length
 		const disabled = checkedCount > 2
+		
+		let filteredList = data.content.filter(item=>{
+			if(this.props.insuranceProvidervalue==='default') {
+				
+				if(this.props.serviceAreaValue==='default') return item
+				else return item.plan.planEligibility.serviceAreaIds[0]===this.props.serviceAreaValue
+			}
+			else {
+
+				if(this.props.serviceAreaValue==='default')return item.insuranceProviderId===this.props.insuranceProvidervalue
+				
+				else return ( item.insuranceProviderId===this.props.insuranceProvidervalue && item.plan.planEligibility.serviceAreaIds[0]===this.props.serviceAreaValue)
+			}
+		})
+
+		let sortedList = filteredList.sort(this.compare)
+		console.log(sortedList)
 		const list = 
-		data.content.map((item,id) => (
+		
+		sortedList.map((item,id) => (
 			
 			<Card 
 				key={id}
 				id={id}
 				insuranceProviderId={item.insuranceProviderId}
+				insuranceProviderName={item.plan.insuranceProviderName}
 				name={item.plan.planName}
-				sum={item.plan.sumInsureds}
+				sum={item.plan.sumInsureds.reduce(function getSum(total, num) {
+					return total + num
+				})}
 				premium={item.totalAmount.amount}
 				onClick={this.handleClick}
 				onChange={()=>this.onSelectedChange(item,id)}
