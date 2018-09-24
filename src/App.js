@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import BrowsePage from './components/pages/browse/BrowsePage.js'
-import ComparePage from './components/pages/ComparePage'
+import ComparePage from './components/pages/compare/ComparePage.js'
 import DetailPage from './components/pages/detail/DetailPage'
 import Home from './components/pages/home/Home.js'
 class App extends Component {
