@@ -13,15 +13,13 @@ export const selectPlan = plan => ({
 		sumInsureds: plan.sumInsureds,
 		amount: plan.amount,
 		MedicalFeatures: plan.MedicalFeatures,
-		TravelFeatures: plan.TravelFeatures
+		TravelFeatures: plan.TravelFeatures,
+		Premium: plan.Premium
 	}
 })
 
 export const comparePlan = item => ({
 	type: COMPARE_PLAN,
-	payload: {
-		id: item.id,
-		compare: item.compare
-	}
+	payload: item
 })
 
