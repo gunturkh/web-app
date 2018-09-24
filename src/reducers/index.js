@@ -16,7 +16,7 @@ const rootReducer = (state = initialState, action) => {
 	case COMPARE_PLAN:
 		return {
 			...state,
-			compare: [...state.compare, action.payload]
+			compare: action.payload
 		}
 	default: 
 		return state
