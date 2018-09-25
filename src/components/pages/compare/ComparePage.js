@@ -3,6 +3,7 @@ import Navbar from '../../navbar/Navbar.js'
 import { connect } from 'react-redux'
 import ProviderLogo from '../../providerlogo/ProviderLogo'
 import './ComparePage.css'
+import CurrencyFormat from 'react-currency-format'
 
 const mapStateToProps = state => {
 	return { compare: state.compare }
@@ -18,10 +19,10 @@ class Compare extends Component {
 				<ProviderLogo logo={item.item.insuranceProviderId}/>
 				<div className="compareCardInfo">
 					<div className="info">
-						<b>Premium:</b> {item.item.totalAmount.amount} SGD
+						<b>Premium:</b>  <CurrencyFormat value={item.item.totalAmount.amount} displayType={'text'} thousandSeparator={true} prefix={'$'} />
 					</div>
 					<div className="info">
-						<b>Sum:</b> {item.item.sumInsured} SGD
+						<b>Sum:</b> <CurrencyFormat value={item.item.sumInsured} displayType={'text'} thousandSeparator={true} prefix={'$'} />
 					</div>
 					<div  className="medical">
 						<b>Medical Features:</b>{
