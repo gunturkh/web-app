@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Navbar from '../../navbar/Navbar.js'
+import Navbar from '../../Navbar/Navbar'
 import { connect } from 'react-redux'
-import ProviderLogo from '../../providerlogo/ProviderLogo'
+import ProviderLogo from '../../ProviderLogo/ProviderLogo'
 import './ComparePage.css'
 import CurrencyFormat from 'react-currency-format'
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ProviderLogo from '../providerlogo/ProviderLogo.js'
+import ProviderLogo from '../ProviderLogo/ProviderLogo'
 import  './Card.css'
 import { Link } from 'react-router-dom'
 import CurrencyFormat from 'react-currency-format'
@@ -26,7 +26,6 @@ class Card extends Component{
 
 	render(){
 		let checked = 'card cardContainer ' + (this.state.compare ? 'checked' : '')
-		console.log('compare: ', this.state.compare)
 		
 		return(
 			<div className={checked}>
@@ -45,7 +44,6 @@ class Card extends Component{
 
 				<div className="container">
 					<ProviderLogo logo={this.props.insuranceProviderId}/>
-					{/* {this.props.insuranceProviderName} */}
 					<div className="cardInfo">
 						<div>
 							<b>{this.props.name}</b>

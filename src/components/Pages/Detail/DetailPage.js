@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Navbar from '../../navbar/Navbar.js'
+import Navbar from '../../Navbar/Navbar.js'
 import { connect } from 'react-redux'
 import CurrencyFormat from 'react-currency-format'
 import './DetailPage.css'
@@ -53,7 +53,7 @@ class Detail extends Component {
 		const detail = this.props.detail
 		const MedicalFeatures = detail.MedicalFeatures
 		const TravelFeatures = detail.TravelFeatures
-		const insuranceName = detail.insuranceProviderName //this.insuranceName(detail.insuranceProviderId)
+		const insuranceName = detail.insuranceProviderName
 		const sumInsureds = Number(detail.sumInsureds)
 		const planName = detail.planName
 		const premium = detail.Premium

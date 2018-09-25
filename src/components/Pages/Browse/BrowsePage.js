@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Navbar from '../../navbar/Navbar.js'
-import List from '../../list/List.js'
+import Navbar from '../../Navbar/Navbar.js'
+import List from '../../List/List'
 import { connect } from 'react-redux'
 import { comparePlan } from '../../../actions'
 import './BrowsePage.css'
@@ -60,8 +60,6 @@ class Browse extends Component {
 		}
 	}
 	render(){
-		console.log('selectValue: ', this.state)
-		
 		let compare = 'nav' + (this.state.checked.length<2 ? ' hidden' : '' )
 		
 		return (

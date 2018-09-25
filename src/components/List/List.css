@@ -7,7 +7,6 @@
 
 .card{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    /* background-color: rgba(0, 105, 61, 0.527); */
     transition: 0.3s;
     width: 200px;
     margin-bottom: 20px;
@@ -24,7 +23,6 @@
 }
 
 .card:hover > .compare{
-    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); */
     display: block;
 }
 
@@ -45,7 +43,7 @@
 
 .view-detail {
     position: relative;
-    background-color:rgb(0, 105, 61); /* Green */
+    background-color:rgb(0, 105, 61);
     border: none;
     border-radius: 5px;
     color: white;

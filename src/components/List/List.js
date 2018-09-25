@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Card from '../card/Card.js'
+import Card from '../Card/Card.js'
 import data from '../../assets/data.json'
 import PropTypes from 'prop-types'
 import { selectPlan } from '../../actions'
@@ -101,7 +101,6 @@ class ConnectedList extends Component{
 		})
 
 		let sortedList = filteredList.sort(this.compare)
-		console.log(sortedList)
 		const list = 
 		
 		sortedList.map((item,id) => (

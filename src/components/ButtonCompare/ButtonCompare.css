@@ -1,15 +1,8 @@
-/* .button-compare{
-    display: flex;
-    position: fixed;
-    justify-content: center;
-} */
-
 .hidden{
     display: none;
 }
 
 .button-compare {
-    /* position: fixed; */
     background-color:rgb(0, 105, 61);
     border: none;
     border-radius: 5px;
@@ -23,7 +16,6 @@
 }
 
 div.sticky{
-    /* width: 100px; */
     display: flex;
     position: sticky;
     justify-content: center;
