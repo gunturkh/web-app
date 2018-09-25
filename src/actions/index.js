@@ -9,6 +9,7 @@ export const selectPlan = plan => ({
 	type: SELECT_PLAN,
 	payload: { 
 		insuranceProviderId: plan.insuranceProviderId,
+		insuranceProviderName: plan.insuranceProviderName,
 		planName: plan.planName,
 		sumInsureds: plan.sumInsureds,
 		amount: plan.amount,
