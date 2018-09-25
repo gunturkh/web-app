@@ -52,6 +52,7 @@ class ConnectedList extends Component{
 	handleClick(item,id){
 		this.props.selectPlan({
 			insuranceProviderId:item.insuranceProviderId,
+			insuranceProviderName:item.plan.insuranceProviderName,
 			planName: item.plan.planName,
 			sumInsureds: item.plan.sumInsureds,
 			amount: item.totalAmount.amount,
