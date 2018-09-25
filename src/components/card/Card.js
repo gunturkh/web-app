@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ProviderLogo from '../providerlogo/ProviderLogo.js'
 import  './Card.css'
 import { Link } from 'react-router-dom'
-
+import CurrencyFormat from 'react-currency-format'
 
 class Card extends Component{
 	constructor(props){
@@ -51,10 +51,10 @@ class Card extends Component{
 							<b>{this.props.name}</b>
 						</div>
 						<div>
-							<b>Sum:</b> {this.props.sum} SGD
+							<b>Sum:</b> <CurrencyFormat value={this.props.sum}  displayType={'text'} thousandSeparator={true} prefix={'$'} />
 						</div>
 						<div>
-							<b>Premium:</b> {this.props.premium} SGD
+							<b>Premium:</b> <CurrencyFormat value={this.props.premium} displayType={'text'} thousandSeparator={true} prefix={'$'} />
 						</div>
 					</div>
 					<div>
