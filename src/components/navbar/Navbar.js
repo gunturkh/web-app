@@ -10,8 +10,7 @@ class Navbar extends Component{
 					<NavLink className="navBrand" to="/"><b>Web App</b></NavLink>
 				</ul>
 				<ul className="nav flexContainer flexEnd">
-					<NavLink to="/">Home</NavLink>
-					<NavLink to="/browse">Browse</NavLink>
+					<NavLink to="/">Browse</NavLink>
 					<NavLink to="/compare" className={this.props.compare} onClick={this.props.compareOnClick}>Compare</NavLink>
 					
 				</ul>
