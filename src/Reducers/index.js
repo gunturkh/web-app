@@ -1,5 +1,5 @@
 import data from '../assets/data.json'
-import { GET_CONTENT,SELECT_PLAN, COMPARE_PLAN } from '../constants/action-types'
+import { GET_CONTENT,SELECT_PLAN, COMPARE_PLAN } from '../Constants/action-types'
 
 const initialState = {
 	content: data.content,

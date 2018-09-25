@@ -1,4 +1,4 @@
-import { GET_CONTENT, SELECT_PLAN, COMPARE_PLAN } from '../constants/action-types'
+import { GET_CONTENT, SELECT_PLAN, COMPARE_PLAN } from '../Constants/action-types'
 
 
 export const getContent = content => ({
